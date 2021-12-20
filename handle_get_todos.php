@@ -27,7 +27,7 @@ if (!isset($_SESSION)) {
 $account = $_SESSION['account'];
 
 // get all todos according to account
-$stmt = $conn->prepare('SELECT checked, content, categories, comment, priority FROM todos WHERE account=? ORDER BY id DESC');
+$stmt = $conn->prepare('SELECT checked, content, categories, comment, priority FROM todos WHERE account=? ORDER BY id ASC');
 $stmt->bind_param('s', $account);
 $res = $stmt->execute();
 
